@@ -70,7 +70,6 @@ predictions = classifier.predict(new_texts_vectors)
 for text, label in zip(new_texts, predictions):
     print(f"Text: {text}\nPrediction: {'Fake' if label == 0 else 'True'}\n")
 
-
 true_df = pd.read_csv('/kaggle/input/fake-and-real-news-dataset/True.csv')
 fake_df = pd.read_csv('/kaggle/input/fake-and-real-news-dataset/Fake.csv')
 fake_df['label'] = 0
