@@ -11,6 +11,7 @@ from scipy.sparse import hstack
 from sklearn.model_selection import cross_val_score,learning_curve
 import matplotlib.pyplot as plt
 
+
 import os
 for dirname, _, filenames in os.walk('/kaggle/input'):
     for filename in filenames:
@@ -69,6 +70,8 @@ new_texts_vectors = vectorizer.transform(new_texts)
 predictions = classifier.predict(new_texts_vectors)
 for text, label in zip(new_texts, predictions):
     print(f"Text: {text}\nPrediction: {'Fake' if label == 0 else 'True'}\n")
+
+
 
 true_df = pd.read_csv('/kaggle/input/fake-and-real-news-dataset/True.csv')
 fake_df = pd.read_csv('/kaggle/input/fake-and-real-news-dataset/Fake.csv')
